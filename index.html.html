@@ -1,25 +1,32 @@
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Chaque pas compte</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body,html{background:#1C1C1E;color:#F5F5F0;font-family:'DM Sans',sans-serif;min-height:100vh}
-#s-onboard{background:#1C1C1E;padding:2.5rem 1.5rem;min-height:100vh;display:flex;flex-direction:column}
+html,body{background:#1C1C1E;color:#F5F5F0;font-family:'DM Sans',sans-serif;min-height:100vh}
+#s-onboard{background:#1C1C1E;padding:2rem 1.5rem;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between}
 #s-main{background:#1C1C1E;display:none;padding-bottom:3rem}
-.ob-logo{width:52px;height:52px;border-radius:14px;background:rgba(46,204,154,0.1);border:1px solid rgba(46,204,154,0.22);display:flex;align-items:center;justify-content:center;margin-bottom:1.75rem}
-.ob-h{font-family:Georgia,serif;font-size:34px;line-height:1.15;color:#F5F5F0;margin-bottom:0.75rem}
+.ob-top{display:flex;align-items:center;gap:14px;margin-bottom:1.25rem}
+.ob-logo{width:44px;height:44px;border-radius:12px;background:rgba(46,204,154,0.1);border:1px solid rgba(46,204,154,0.22);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ob-h{font-family:Georgia,serif;font-size:28px;line-height:1.15;color:#F5F5F0}
 .ob-h em{font-style:italic;color:#2ECC9A}
-.ob-sub{font-size:15px;color:#A0A09A;line-height:1.7;margin-bottom:2rem}
-.ob-cards{display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:2rem}
-.ob-card{background:#242426;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1rem 1.125rem;display:flex;gap:12px;align-items:flex-start}
-.ob-ci{font-size:16px;margin-top:2px;flex-shrink:0}
-.ob-ct strong{display:block;color:#F5F5F0;font-size:14px;font-weight:500;margin-bottom:2px}
-.ob-ct{font-size:13px;color:#A0A09A;line-height:1.6}
-.btn-go{width:100%;padding:15px;background:#2ECC9A;border:none;border-radius:14px;font-size:16px;font-weight:600;color:#0D2920;cursor:pointer;font-family:inherit;display:block}
+.ob-sub{font-size:14px;color:#A0A09A;line-height:1.6;margin-bottom:1.25rem}
+.ob-cards{display:flex;flex-direction:column;gap:8px;margin-bottom:1.25rem}
+.ob-card{background:#242426;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:0.75rem 1rem;display:flex;gap:10px;align-items:center}
+.ob-ci{font-size:16px;flex-shrink:0}
+.ob-ct{font-size:13px;color:#A0A09A;line-height:1.4}
+.ob-ct strong{color:#F5F5F0;font-weight:500;margin-right:4px}
+.btn-go{width:100%;padding:15px;background:#2ECC9A;border:none;border-radius:14px;font-size:16px;font-weight:600;color:#0D2920;cursor:pointer;font-family:inherit}
 .mh{padding:1.5rem 1.5rem 0;display:flex;align-items:center;justify-content:space-between}
 .mh-title{font-family:Georgia,serif;font-size:20px;color:#F5F5F0}
 .dc{font-size:11px;color:#5C5C58;background:#242426;padding:5px 11px;border-radius:20px;border:1px solid rgba(255,255,255,0.08);text-transform:capitalize}
-.sk{margin:1rem 1.5rem 0;background:#242426;border:1px solid rgba(255,255,255,0.08);border-radius:13px;padding:0.875rem 1.1rem;display:flex;align-items:center;gap:12px}
+.sk{margin:1rem 1.5rem 0;background:#242426;border:1px solid rgba(255,255,255,0.08);border-radius:13px;padding:0.75rem 1rem;display:flex;align-items:center;gap:12px}
 .sk-f{font-size:18px}
-.sk-c{font-size:15px;font-weight:600;color:#F5F5F0}
+.sk-c{font-size:14px;font-weight:600;color:#F5F5F0}
 .sk-c span{color:#2ECC9A}
 .sk-s{font-size:12px;color:#5C5C58;margin-top:1px}
 .tabs{display:flex;gap:3px;margin:1rem 1.5rem;background:#242426;border-radius:11px;padding:3px;border:1px solid rgba(255,255,255,0.08)}
@@ -65,7 +72,7 @@ textarea::placeholder{color:#5C5C58}
 .sn{font-size:30px;font-weight:600;margin-bottom:3px;font-family:Georgia,serif}
 .slb{font-size:11px;color:#5C5C58;text-transform:uppercase;letter-spacing:0.3px}
 .nf{color:#2ECC9A}.ni{color:#A08CFF}.np{color:#FFBE50}.nt{color:#F5F5F0}
-.enc{background:#242426;border-radius:14px;padding:1.25rem;border-left:3px solid #2ECC9A;border-radius:0;border-top-right-radius:14px;border-bottom-right-radius:14px;border-bottom-left-radius:14px}
+.enc{background:#242426;border-radius:0 14px 14px 14px;padding:1.25rem;border-left:3px solid #2ECC9A}
 .enc p{font-family:Georgia,serif;font-size:15px;color:#A0A09A;line-height:1.75;font-style:italic}
 .hg{margin-bottom:1.5rem}
 .hdl{font-size:11px;color:#5C5C58;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:9px}
@@ -75,23 +82,27 @@ textarea::placeholder{color:#5C5C58}
 @keyframes sin{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .sin{animation:sin 0.3s ease-out forwards}
 </style>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+</head>
+<body>
 
 <div id="s-onboard">
-  <div class="ob-logo">
-    <svg viewBox="0 0 26 26" fill="none" width="26" height="26">
-      <path d="M13 3C13 3 7 9 7 15a6 6 0 0012 0c0-6-6-12-6-12z" fill="#2ECC9A" opacity="0.2"/>
-      <path d="M13 7c0 0-3.5 5-3.5 9a3.5 3.5 0 007 0c0-4-3.5-9-3.5-9z" fill="#2ECC9A"/>
-      <path d="M13 19v4" stroke="#2ECC9A" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <h1 class="ob-h">Chaque petit pas<br><em>te construit.</em></h1>
-  <p class="ob-sub">Note ce que tu as fait aujourd&#8217;hui.<br>Regarde s&#8217;accumuler ta progression.</p>
-  <div class="ob-cards">
-    <div class="ob-card"><span class="ob-ci">&#9997;</span><div class="ob-ct"><strong>Une action par jour</strong>Aussi petite soit-elle &#8212; elle compte et s&#8217;accumule.</div></div>
-    <div class="ob-card"><span class="ob-ci">&#127807;</span><div class="ob-ct"><strong>3 sph&#232;res de vie</strong>Food &amp; Fit &#183; Bien-&#234;tre int&#233;rieur &#183; Projet perso</div></div>
-    <div class="ob-card"><span class="ob-ci">&#128200;</span><div class="ob-ct"><strong>Suis ta progression</strong>Visualise tout ce que tu as d&#233;j&#224; accompli.</div></div>
+  <div>
+    <div class="ob-top">
+      <div class="ob-logo">
+        <svg viewBox="0 0 26 26" fill="none" width="24" height="24">
+          <path d="M13 3C13 3 7 9 7 15a6 6 0 0012 0c0-6-6-12-6-12z" fill="#2ECC9A" opacity="0.2"/>
+          <path d="M13 7c0 0-3.5 5-3.5 9a3.5 3.5 0 007 0c0-4-3.5-9-3.5-9z" fill="#2ECC9A"/>
+          <path d="M13 19v4" stroke="#2ECC9A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h1 class="ob-h">Chaque petit pas<br><em>te construit.</em></h1>
+    </div>
+    <p class="ob-sub">Note ce que tu as fait aujourd&#8217;hui. Regarde s&#8217;accumuler ta progression.</p>
+    <div class="ob-cards">
+      <div class="ob-card"><span class="ob-ci">&#9997;</span><div class="ob-ct"><strong>Une action par jour</strong> &#8212; aussi petite soit-elle, elle s&#8217;accumule.</div></div>
+      <div class="ob-card"><span class="ob-ci">&#127807;</span><div class="ob-ct"><strong>3 sph&#232;res</strong> &#8212; Food &amp; Fit &#183; Bien-&#234;tre int&#233;rieur &#183; Projet perso</div></div>
+      <div class="ob-card"><span class="ob-ci">&#128200;</span><div class="ob-ct"><strong>Suis ta progression</strong> &#8212; visualise tout ce que tu as accompli.</div></div>
+    </div>
   </div>
   <button class="btn-go" id="btn-go">Commencer mon journal &#8594;</button>
 </div>
@@ -149,7 +160,7 @@ textarea::placeholder{color:#5C5C58}
 </div>
 
 <script>
-var entries=[], sphere=null;
+var entries=[],sphere=null;
 var ENC=[
   "Chaque jour est une occasion de devenir un peu plus la personne que tu veux \u00eatre. Commence maintenant.",
   "Tu as fait un pas aujourd\u2019hui. C\u2019est tout ce qu\u2019il fallait. Demain, tu en feras un autre.",
@@ -163,7 +174,7 @@ function go(){
   document.getElementById('s-main').style.display='block';
   var now=new Date();
   document.getElementById('date-chip').textContent=now.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
-  renderStreak(); renderProg();
+  renderStreak();renderProg();
 }
 
 function showTab(tab){
@@ -189,14 +200,16 @@ function setSphere(s){
 function particles(btn){
   try{
     var r=btn.getBoundingClientRect();
-    var cx=r.left+r.width/2, cy=r.top+r.height/2;
+    var cx=r.left+r.width/2,cy=r.top+r.height/2;
     var cols=['#2ECC9A','#1AAF7A','#80FFCC','#A8FFE0'];
     for(var i=0;i<14;i++){
       (function(i){setTimeout(function(){
         var p=document.createElement('div');
         p.className='pt';
-        var a=Math.random()*Math.PI*2, d=50+Math.random()*70, sz=4+Math.random()*5;
-        p.style.cssText='left:'+cx+'px;top:'+cy+'px;width:'+sz+'px;height:'+sz+'px;background:'+cols[Math.floor(Math.random()*cols.length)]+';';
+        var a=Math.random()*Math.PI*2,d=50+Math.random()*70,sz=4+Math.random()*5;
+        p.style.left=cx+'px';p.style.top=cy+'px';
+        p.style.width=sz+'px';p.style.height=sz+'px';
+        p.style.background=cols[Math.floor(Math.random()*cols.length)];
         p.style.setProperty('--tx',Math.cos(a)*d+'px');
         p.style.setProperty('--ty',Math.sin(a)*d+'px');
         document.body.appendChild(p);
@@ -225,7 +238,7 @@ function addEntry(){
   document.getElementById('b-proj').className='sp';
   hint.textContent='S\u00e9lectionne une sph\u00e8re pour continuer.';
   hint.className='hint';
-  renderToday(); renderStreak(); renderProg();
+  renderToday();renderStreak();renderProg();
 }
 
 function pc(s){return s==='fit'?'pf':s==='int'?'pi':'pp';}
@@ -300,12 +313,14 @@ function renderProg(){
   document.getElementById('enc-txt').textContent=ENC[idx];
 }
 
-document.getElementById('btn-go').addEventListener('click', go);
-document.getElementById('t-today').addEventListener('click', function(){showTab('today');});
-document.getElementById('t-hist').addEventListener('click', function(){showTab('hist');});
-document.getElementById('t-prog').addEventListener('click', function(){showTab('prog');});
-document.getElementById('b-fit').addEventListener('click', function(){setSphere('fit');});
-document.getElementById('b-int').addEventListener('click', function(){setSphere('int');});
-document.getElementById('b-proj').addEventListener('click', function(){setSphere('proj');});
-document.getElementById('btn-cel').addEventListener('click', addEntry);
+document.getElementById('btn-go').addEventListener('click',go);
+document.getElementById('t-today').addEventListener('click',function(){showTab('today');});
+document.getElementById('t-hist').addEventListener('click',function(){showTab('hist');});
+document.getElementById('t-prog').addEventListener('click',function(){showTab('prog');});
+document.getElementById('b-fit').addEventListener('click',function(){setSphere('fit');});
+document.getElementById('b-int').addEventListener('click',function(){setSphere('int');});
+document.getElementById('b-proj').addEventListener('click',function(){setSphere('proj');});
+document.getElementById('btn-cel').addEventListener('click',addEntry);
 </script>
+</body>
+</html>
